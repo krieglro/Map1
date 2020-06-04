@@ -25,7 +25,6 @@ v = folium.FeatureGroup(name="volcanoes")
 for na,la,lo,fe in zip(volcaName,volcanLat,volcanLon,feet):
     v.add_child(folium.CircleMarker(location=[la,lo],popup="{},{}ft".format(na,fe) ,radius=7,color='grey',fill_color=color_producer(fe), fill_opacity=0.7))
 p = FeatureGroup(name ="population")
-p.add_child(folium.Geojson("world.json",style_function=lambdas x: return 'red'))
 map.add_child(v)
 map.add_child(folium.LayerControl(position='topright',collapsed=True,))
 map.save("myMap.Html")
